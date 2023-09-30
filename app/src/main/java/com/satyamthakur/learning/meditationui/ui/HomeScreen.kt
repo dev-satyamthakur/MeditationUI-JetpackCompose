@@ -21,6 +21,7 @@ import androidx.compose.foundation.lazy.grid.GridCells
 import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material3.Button
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
@@ -40,9 +41,11 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.satyamthakur.learning.meditationui.BottomMenuItem
 import com.satyamthakur.learning.meditationui.Feature
 import com.satyamthakur.learning.meditationui.R
 import com.satyamthakur.learning.meditationui.standardQuadFromTo
+import com.satyamthakur.learning.meditationui.ui.theme.AquaBlue
 import com.satyamthakur.learning.meditationui.ui.theme.Beige1
 import com.satyamthakur.learning.meditationui.ui.theme.Beige2
 import com.satyamthakur.learning.meditationui.ui.theme.Beige3
@@ -104,6 +107,18 @@ fun HomeScreen() {
             ))
         }
     }
+}
+
+@Composable
+fun BottomNavigation(
+    items: List<BottomMenuItem>,
+    modifier: Modifier = Modifier,
+    activeColor: Color = ButtonBlue,
+    activeTextColor: Color = Color.White,
+    inactiveTextColor: Color = AquaBlue,
+    initialSelectedItemIndex: Int = 0
+) {
+
 }
 
 @Composable
@@ -297,8 +312,8 @@ fun FeatureItem(feature: Feature) {
             Text(
                 text = "Start",
                 color = TextWhite,
-                fontSize = 40.sp,
-                fontWeight = FontWeight.Bold,
+                fontSize = 14.sp,
+                style = MaterialTheme.typography.titleLarge,
                 modifier = Modifier
                     .clickable {
                         // Handle
