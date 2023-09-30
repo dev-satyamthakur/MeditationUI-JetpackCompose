@@ -108,6 +108,13 @@ fun HomeScreen() {
                 )
             )
         }
+        BottomNavigation(items = listOf(
+            BottomMenuItem("Home", R.drawable.ic_home),
+            BottomMenuItem("Meditate", R.drawable.ic_bubble),
+            BottomMenuItem("Sleep", R.drawable.ic_moon),
+            BottomMenuItem("Music", R.drawable.ic_music),
+            BottomMenuItem("Profile", R.drawable.ic_profile),
+        ))
     }
 }
 
@@ -133,7 +140,15 @@ fun BottomNavigation(
             .padding(15.dp)
     ) {
         items.forEachIndexed { index, item ->
-
+            BottomMenuItemComp(
+                item = item,
+                isSelected = index == selectedItemIndex,
+                activeColor = activeColor,
+                activeTextColor = activeTextColor,
+                inactiveTextColor = inactiveTextColor
+            ) {
+                selectedItemIndex = index
+            }
         }
     }
 }
